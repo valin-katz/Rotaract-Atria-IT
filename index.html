@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Awareness Bot | RC Atria IT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>Rotaract Club of Atria I.T.</h1>
+            <p class="subtitle">Food Safety Initiative</p>
+        </div>
+        <button id="theme-btn" class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </header>
+
+    <main class="chat-wrapper">
+        <div id="chat-window">
+            <div class="message bot-message">
+                <strong>Hello Macha! 👋</strong><br>
+                I'm your Food Awareness guide. Send me a product (e.g., Lays, Coke), and I'll tell you the real scene. 🥗
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="Type a food item..." onkeypress="handleEnter(event)">
+            
+            <button id="sendBtn" onclick="sendMessage()">Send</button>
+        </div>
+        
+        <div class="footer-note">
+            Powered by Rotaract Club of Atria IT • 100% Student Awareness Project
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const btn = document.getElementById('theme-btn');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                btn.innerText = '🌙'; // Moon icon for Light Mode
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                btn.innerText = '☀️'; // Sun icon for Dark Mode
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
